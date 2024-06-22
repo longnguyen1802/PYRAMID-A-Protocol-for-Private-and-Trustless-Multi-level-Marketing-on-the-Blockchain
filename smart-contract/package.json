@@ -1,0 +1,22 @@
+{
+  "name": "latest-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx hardhat test",
+    "analyze:slither": "slither . --filter-paths math --exclude-informational",
+    "analyze:mythril": "myth analyze ./contracts/Protocol.sol ./contracts/account/MemberAccount.sol ./contracts/mixer/MoneyMixer.sol ./contracts/mixer/ReferMixer.sol ./contracts/cryptography/Cryptography.sol",
+    "lint:sol": "npx prettier --write --plugin=prettier-plugin-solidity contracts/**/*.sol",
+    "lint:ts": "prettier -w 'test/**/*.ts'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+    "hardhat": "^2.22.3",
+    "prettier": "^3.2.5",
+    "prettier-plugin-solidity": "^1.3.1"
+  }
+}
